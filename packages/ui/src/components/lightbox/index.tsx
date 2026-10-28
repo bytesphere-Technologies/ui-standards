@@ -1,0 +1,12 @@
+"use client";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import * as React from "react";
+
+/** @component Lightbox @category media @use-when a gallery that opens full screen. Arrow keys, Escape, counter, focus returns to the thumbnail. */
+export function Lightbox({ items }: { items: { id: string; bg: string; title: string }[] }) {
+  const [i, setI] = React.useState<number | null>(null); const last = React.useRef<HTMLElement | null>(null);
+  React.useEffect(() => { if (i === null) return; const k = (e: KeyboardEvent) => { if (e.key === "Escape") { setI(null); last.current?.focus(); } if (e.key === "ArrowRight") setI((x) => (x! + 1) % items.length); if (e.key === "ArrowLeft") setI((x) => (x! + items.length - 1) % items.length); }; addEventListener("keydown", k); return () => removeEventListener("keydown", k); }, [i, items.length]);
+  return <><div className="grid grid-cols-3 gap-2 sm:grid-cols-4">{items.map((t, k) => <button key={t.id} type="button" aria-label={`Open ${t.title}`} onClick={(e) => { last.current = e.currentTarget; setI(k); }} className="press aspect-square rounded-control transition-transform hover:scale-[1.03]" style={{ background: t.bg }} />)}</div>
+    {i !== null && <div role="dialog" aria-modal="true" aria-label="Gallery" className="m-fade fixed inset-0 z-[80] grid place-items-center bg-[rgba(0,9,19,.88)] p-4" onClick={() => { setI(null); last.current?.focus(); }}><button type="button" aria-label="Close" className="absolute end-4 top-4 grid size-11 place-items-center rounded-round bg-white/10 text-white hover:bg-white/20"><X /></button><button type="button" aria-label="Previous" onClick={(e) => { e.stopPropagation(); setI((i + items.length - 1) % items.length); }} className="absolute start-3 grid size-11 place-items-center rounded-round bg-white/10 text-white hover:bg-white/20"><ChevronLeft /></button>
+      <div key={i} className="m-pop grid aspect-[4/3] w-[min(46rem,100%)] place-items-center rounded-card text-h2 font-semibold text-white" style={{ background: items[i].bg }} onClick={(e) => e.stopPropagation()}>{items[i].title}</div><button type="button" aria-label="Next" onClick={(e) => { e.stopPropagation(); setI((i + 1) % items.length); }} className="absolute end-3 grid size-11 place-items-center rounded-round bg-white/10 text-white hover:bg-white/20"><ChevronRight /></button><p className="tnum absolute bottom-5 text-body-sm text-white/90">{i + 1} / {items.length}</p></div>}</>;
+}

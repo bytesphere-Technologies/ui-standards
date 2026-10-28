@@ -1,0 +1,282 @@
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/geist-mono";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+@import "tailwindcss";
+@source "../";
+@import "./tokens.css";
+@import "./themes.css";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Tailwind aliases onto the generated tokens (--t-* = Style Dictionary output). Class names match the spec docs. */
+@theme inline {
+  --font-sans: "Inter Variable", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono Variable", "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-surface: var(--t-color-surface-default);
+  --color-surface-raised: var(--t-color-surface-raised);
+  --color-surface-sunken: var(--t-color-surface-sunken);
+  --color-surface-overlay: var(--t-color-surface-overlay);
+  --color-scrim: var(--t-color-overlay-scrim);
+  --color-subtle: var(--t-color-border-subtle);
+  --color-strong: var(--t-color-border-strong);
+  --color-control: var(--t-color-border-control);
+  --color-primary: var(--t-color-text-primary);
+  --color-secondary: var(--t-color-text-secondary);
+  --color-tertiary: var(--t-color-text-tertiary);
+  --color-inverse: var(--t-color-text-inverse);
+  --color-disabled: var(--t-color-text-disabled);
+  --color-link: var(--t-color-text-link-rest);
+  --color-focus: var(--t-color-focus-ring);
+  --color-focus-offset: var(--t-color-focus-ring-offset);
+  --color-selected: var(--t-color-selected-bg);
+  --color-selected-bar: var(--t-color-selected-bar);
+  --color-input: var(--t-color-input-bg);
+  --color-input-readonly: var(--t-color-input-bg-readonly);
+  --color-placeholder: var(--t-color-input-placeholder);
+
+  --color-action-primary: var(--t-color-action-primary-rest);
+  --color-action-primary-hover: var(--t-color-action-primary-hover);
+  --color-action-primary-active: var(--t-color-action-primary-active);
+  --color-action-primary-disabled: var(--t-color-action-primary-disabled);
+  --color-action-primary-fg: var(--t-color-action-primary-fg);
+  --color-action-primary-fg-disabled: var(--t-color-action-primary-fg-disabled);
+  --color-action-secondary: var(--t-color-action-secondary-rest);
+  --color-action-secondary-hover: var(--t-color-action-secondary-hover);
+  --color-action-secondary-active: var(--t-color-action-secondary-active);
+  --color-action-secondary-border: var(--t-color-action-secondary-border);
+  --color-action-secondary-fg: var(--t-color-action-secondary-fg);
+  --color-action-ghost-hover: var(--t-color-action-ghost-hover);
+  --color-action-ghost-active: var(--t-color-action-ghost-active);
+  --color-action-ghost-fg: var(--t-color-action-ghost-fg);
+  --color-action-subtle: var(--t-color-action-subtle-rest);
+  --color-action-subtle-hover: var(--t-color-action-subtle-hover);
+  --color-action-subtle-fg: var(--t-color-action-subtle-fg);
+  --color-action-accent: var(--t-color-action-accent-rest);
+  --color-action-accent-hover: var(--t-color-action-accent-hover);
+  --color-action-accent-fg: var(--t-color-action-accent-fg);
+  --color-action-danger: var(--t-color-action-danger-rest);
+  --color-action-danger-hover: var(--t-color-action-danger-hover);
+  --color-action-danger-active: var(--t-color-action-danger-active);
+  --color-action-danger-fg: var(--t-color-action-danger-fg);
+
+  --color-status-success-bg: var(--t-color-status-success-bg);
+  --color-status-success-border: var(--t-color-status-success-border);
+  --color-status-success-fg: var(--t-color-status-success-fg);
+  --color-status-success-dot: var(--t-color-status-success-dot);
+  --color-status-success-solid: var(--t-color-status-success-solid);
+  --color-status-success-banner-bg: var(--t-color-status-success-banner-bg);
+  --color-status-success-banner-border: var(--t-color-status-success-banner-border);
+  --color-status-success-banner-fg: var(--t-color-status-success-banner-fg);
+  --color-status-warning-bg: var(--t-color-status-warning-bg);
+  --color-status-warning-border: var(--t-color-status-warning-border);
+  --color-status-warning-fg: var(--t-color-status-warning-fg);
+  --color-status-warning-dot: var(--t-color-status-warning-dot);
+  --color-status-warning-solid: var(--t-color-status-warning-solid);
+  --color-status-warning-banner-bg: var(--t-color-status-warning-banner-bg);
+  --color-status-warning-banner-border: var(--t-color-status-warning-banner-border);
+  --color-status-warning-banner-fg: var(--t-color-status-warning-banner-fg);
+  --color-status-danger-bg: var(--t-color-status-danger-bg);
+  --color-status-danger-border: var(--t-color-status-danger-border);
+  --color-status-danger-fg: var(--t-color-status-danger-fg);
+  --color-status-danger-dot: var(--t-color-status-danger-dot);
+  --color-status-danger-solid: var(--t-color-status-danger-solid);
+  --color-status-danger-banner-bg: var(--t-color-status-danger-banner-bg);
+  --color-status-danger-banner-border: var(--t-color-status-danger-banner-border);
+  --color-status-danger-banner-fg: var(--t-color-status-danger-banner-fg);
+  --color-status-info-bg: var(--t-color-status-info-bg);
+  --color-status-info-border: var(--t-color-status-info-border);
+  --color-status-info-fg: var(--t-color-status-info-fg);
+  --color-status-info-dot: var(--t-color-status-info-dot);
+  --color-status-info-solid: var(--t-color-status-info-solid);
+  --color-status-info-banner-bg: var(--t-color-status-info-banner-bg);
+  --color-status-info-banner-border: var(--t-color-status-info-banner-border);
+  --color-status-info-banner-fg: var(--t-color-status-info-banner-fg);
+  --color-status-neutral-bg: var(--t-color-status-neutral-bg);
+  --color-status-neutral-border: var(--t-color-status-neutral-border);
+  --color-status-neutral-fg: var(--t-color-status-neutral-fg);
+  --color-status-neutral-dot: var(--t-color-status-neutral-dot);
+
+  --color-data-1: var(--t-color-data-1);
+  --color-data-2: var(--t-color-data-2);
+  --color-data-3: var(--t-color-data-3);
+  --color-data-4: var(--t-color-data-4);
+  --color-data-5: var(--t-color-data-5);
+  --color-data-6: var(--t-color-data-6);
+  --color-avatar-1-bg: var(--t-color-avatar-1-bg); --color-avatar-1-fg: var(--t-color-avatar-1-fg);
+  --color-avatar-2-bg: var(--t-color-avatar-2-bg); --color-avatar-2-fg: var(--t-color-avatar-2-fg);
+  --color-avatar-3-bg: var(--t-color-avatar-3-bg); --color-avatar-3-fg: var(--t-color-avatar-3-fg);
+  --color-avatar-4-bg: var(--t-color-avatar-4-bg); --color-avatar-4-fg: var(--t-color-avatar-4-fg);
+  --color-avatar-5-bg: var(--t-color-avatar-5-bg); --color-avatar-5-fg: var(--t-color-avatar-5-fg);
+  --color-avatar-6-bg: var(--t-color-avatar-6-bg); --color-avatar-6-fg: var(--t-color-avatar-6-fg);
+
+  --font-display: "Poppins", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-mark-a: var(--t-color-brand-mark-a);
+  --color-mark-b: var(--t-color-brand-mark-b);
+  --radius-control: var(--t-radius-control);
+  --radius-tag: var(--t-radius-tag);
+  --radius-button: var(--t-radius-button);
+  --radius-card: var(--t-radius-card);
+  --radius-modal: var(--t-radius-modal);
+  --radius-round: var(--t-radius-round);
+  --shadow-raised: var(--shadow-raised-v);
+  --shadow-dropdown: var(--t-shadow-dropdown);
+  --shadow-modal: var(--t-shadow-modal);
+
+  --text-caption: 0.75rem;   --text-caption--line-height: 1rem;
+  --text-body-sm: 0.8125rem; --text-body-sm--line-height: 1.125rem;
+  --text-body: 0.875rem;     --text-body--line-height: 1.25rem;
+  --text-h4: 1rem;           --text-h4--line-height: 1.5rem;
+  --text-h3: 1.25rem;        --text-h3--line-height: 1.75rem;
+  --text-h2: 1.5rem;         --text-h2--line-height: 2rem;
+  --text-h1: 2rem;           --text-h1--line-height: 2.5rem;
+  --text-display: 3rem;      --text-display--line-height: 4rem;
+}
+
+:root { --shadow-raised-v: var(--t-shadow-raised); --control-md: 2.25rem; --row: 2.5rem; --field-gap: 1rem; --card-pad: 1.25rem; --row-nav: 2.25rem; color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; --shadow-raised-v: none; }
+:root { --control-sm: 2rem; --control-lg: 2.5rem; }
+:root[data-density="compact"] { --control-md: 2rem; --row: 2rem; --field-gap: 0.75rem; --card-pad: 1rem; --row-nav: 2rem; }
+
+html { font-family: var(--font-sans); font-size: 16px; scroll-padding-top: 4.5rem; text-rendering: optimizeLegibility; }
+body { background: var(--color-surface-sunken); color: var(--color-primary); font-size: 0.875rem; line-height: 1.25rem; letter-spacing: -0.006em; font-feature-settings: "cv11", "ss03"; -webkit-font-smoothing: antialiased; }
+@layer base {
+  h1, h2, h3, h4 { letter-spacing: -0.012em; line-height: 1.2; }
+  button { cursor: default; }
+  .grid > * { min-width: 0; }
+  .flex-wrap > * { max-width: 100%; }
+  /* Scroll and clip containers must be positioned, or sr-only (absolute) children escape and widen the page. */
+  .overflow-x-auto, .overflow-y-auto, .overflow-auto, .overflow-hidden { position: relative; }
+}
+:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--color-focus-offset), 0 0 0 4px var(--color-focus); }
+.ring-inset-focus:focus-visible { box-shadow: inset 0 0 0 2px var(--color-focus); }
+[tabindex="-1"]:focus-visible { box-shadow: none; }
+[data-seg] { flex-shrink: 0; white-space: nowrap; }
+.tnum { font-variant-numeric: tabular-nums; }
+.font-display { font-family: var(--font-display); }
+.skip { position: absolute; left: 8px; top: -48px; z-index: 60; }
+.skip:focus { top: 8px; }
+::selection { background: var(--color-selected); }
+dialog::backdrop { background: var(--color-scrim); }
+
+/* ───────── Animation standard (motion.md): every recipe has a name, duration, easing ───────── */
+:root { --ease-standard: cubic-bezier(.2,0,0,1); --ease-enter: cubic-bezier(0,0,0,1); --ease-exit: cubic-bezier(.3,0,1,1); --ease-inout: cubic-bezier(.65,0,.35,1); }
+@keyframes a-fade { from { opacity: 0; } }
+@keyframes a-pop { from { opacity: 0; transform: translateY(-4px) scale(.96); } }
+@keyframes a-rise { from { opacity: 0; transform: translateY(8px); } }
+@keyframes a-slide-in { from { transform: translateX(100%); } }
+@keyframes a-sheet-up { from { transform: translateY(100%); } }
+@keyframes a-shake { 20%, 60% { transform: translateX(-4px); } 40%, 80% { transform: translateX(4px); } }
+@keyframes a-draw { to { stroke-dashoffset: 0; } }
+@keyframes a-ping { 0% { transform: scale(1); opacity: .5; } 80%, 100% { transform: scale(2.4); opacity: 0; } }
+@keyframes a-pulse { 50% { opacity: .55; } }
+@keyframes a-spin { to { transform: rotate(360deg); } }
+@keyframes a-bar { from { transform: translateX(-100%); } to { transform: translateX(260%); } }
+@keyframes a-flash { from { background-color: var(--color-selected); } }
+@keyframes a-swirl { 0% { transform: rotate(0); } 72%, 100% { transform: rotate(360deg); } }
+@keyframes a-split-a { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-7%, -5%); } }
+@keyframes a-split-b { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(7%, 5%); } }
+@keyframes a-trace { 0% { opacity: .18; } 40% { opacity: 1; } 100% { opacity: .18; } }
+.m-fade { animation: a-fade 150ms var(--ease-enter) both; }
+.m-pop { animation: a-pop 150ms var(--ease-enter) both; }
+.m-rise { animation: a-rise 200ms var(--ease-enter) both; }
+.m-toast { animation: a-rise 200ms var(--ease-enter) both; }
+.m-sheet-right { animation: a-slide-in 300ms var(--ease-enter) both; }
+.m-sheet-up { animation: a-sheet-up 300ms var(--ease-enter) both; }
+.m-shake { animation: a-shake 240ms var(--ease-standard) both; }
+.m-draw { stroke-dasharray: 24; stroke-dashoffset: 24; animation: a-draw 300ms var(--ease-standard) 100ms forwards; }
+.m-ping { animation: a-ping 1.6s var(--ease-exit) infinite; }
+.m-pulse { animation: a-pulse 1.5s linear infinite; }
+.m-spin { animation: a-spin 900ms linear infinite; }
+.m-bar { animation: a-bar 1.2s linear infinite; }
+.m-flash { animation: a-flash 1200ms var(--ease-standard) both; }
+.m-stagger > * { animation: a-rise 200ms var(--ease-enter) both; animation-delay: calc(min(var(--i, 0), 5) * 40ms); }
+.m-swirl { animation: a-swirl 1.6s var(--ease-inout) infinite; transform-origin: 50% 50%; transform-box: fill-box; }
+.m-split-a { animation: a-split-a 1.6s var(--ease-inout) infinite; }
+.m-split-b { animation: a-split-b 1.6s var(--ease-inout) infinite; }
+.m-trace-a { animation: a-trace 1.5s linear infinite; }
+.m-trace-b { animation: a-trace 1.5s linear .75s infinite; }
+@keyframes a-scan { 0%, 100% { top: 14%; } 50% { top: 86%; } }
+.m-scan { animation: a-scan 2s var(--ease-inout) infinite; }
+.press { transition: transform 100ms var(--ease-standard); }
+.press:active { transform: translateY(0.5px) scale(.985); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; animation-delay: 0ms !important; transition-duration: .01ms !important; }
+  .m-spin, .m-swirl, .m-bar, .m-pulse { animation-duration: 1.6s !important; animation-iteration-count: infinite !important; }
+  .m-swirl { animation-name: a-pulse !important; }
+  .m-scan { animation: none !important; top: 50%; }
+  .m-bar { animation-name: a-pulse !important; }
+}
+
+/* ───────── Added recipes M-13 to M-20, loaders Orbit and Bloom ───────── */
+@keyframes a-flyout { from { clip-path: inset(0 0 100% 0); opacity: .5; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
+@keyframes a-burst { from { transform: scale(.55); opacity: .55; } to { transform: scale(1.7); opacity: 0; } }
+@keyframes a-line { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes a-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes a-bell { 0%, 100% { transform: rotate(0); } 20% { transform: rotate(14deg); } 40% { transform: rotate(-11deg); } 60% { transform: rotate(7deg); } 80% { transform: rotate(-4deg); } }
+@keyframes a-drill-in { from { transform: translateX(24px); opacity: 0; } }
+@keyframes a-drill-back { from { transform: translateX(-24px); opacity: 0; } }
+@keyframes a-orbit-a { 0%, 100% { transform: translate(0, -7%); } 25% { transform: translate(7%, 0); } 50% { transform: translate(0, 7%); } 75% { transform: translate(-7%, 0); } }
+@keyframes a-orbit-b { 0%, 100% { transform: translate(0, 7%); } 25% { transform: translate(-7%, 0); } 50% { transform: translate(0, -7%); } 75% { transform: translate(7%, 0); } }
+@keyframes a-bloom { 0%, 100% { transform: scale(.9); opacity: .75; } 50% { transform: scale(1.04); opacity: 1; } }
+.m-underline { position: relative; }
+.m-underline::after { content: ""; position: absolute; inset-inline: 0.75rem; bottom: 2px; height: 2px; border-radius: 2px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform 150ms var(--ease-standard); }
+.m-underline:hover::after, .m-underline[aria-expanded="true"]::after, .m-underline[aria-current="page"]::after { transform: scaleX(1); }
+.m-flyout { animation: a-flyout 200ms var(--ease-enter) both; }
+.m-burst { animation: a-burst 400ms var(--ease-exit) both; }
+.m-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: a-line 400ms var(--ease-standard) forwards; }
+.m-grow { transform-origin: bottom; animation: a-grow 300ms var(--ease-enter) both; }
+.m-bell { transform-origin: 50% 8%; animation: a-bell 400ms var(--ease-standard) both; }
+.m-crossfade { animation: a-fade 150ms var(--ease-standard) both; }
+.m-drill-in { animation: a-drill-in 200ms var(--ease-enter) both; }
+.m-drill-back { animation: a-drill-back 200ms var(--ease-enter) both; }
+.m-orbit-a { animation: a-orbit-a 2s var(--ease-inout) infinite; }
+.m-orbit-b { animation: a-orbit-b 2s var(--ease-inout) infinite; }
+.m-bloom-a { animation: a-bloom 1.8s var(--ease-inout) infinite; transform-box: fill-box; transform-origin: 50% 50%; }
+.m-bloom-b { animation: a-bloom 1.8s var(--ease-inout) .9s infinite; transform-box: fill-box; transform-origin: 50% 50%; }
+@media (prefers-reduced-motion: reduce) { .m-orbit-a, .m-orbit-b, .m-bloom-a, .m-bloom-b { animation-name: a-pulse !important; animation-duration: 1.6s !important; animation-iteration-count: infinite !important; } .m-line { stroke-dashoffset: 0; } }
+
+/* Mobile standard: 44px touch targets, 16px field text (stops iOS zoom), safe-area padding. See 01-foundations/mobile.md */
+@media (max-width: 639px), (pointer: coarse) {
+  :root, :root[data-density="compact"] { --control-sm: 2.5rem; --control-md: 2.75rem; --control-lg: 3rem; --row: 3rem; --row-nav: 2.75rem; }
+  input, select, textarea { font-size: 16px !important; }
+}
+.pb-safe { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+.pt-safe { padding-top: env(safe-area-inset-top); }
+
+/* ───────── Recipes M-21 to M-36: delight, loaders, notifications. See 01-foundations/motion.md ───────── */
+@keyframes a-wave { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-.45em); opacity: 1; } }
+@keyframes a-eq { 0%, 100% { transform: scaleY(.3); } 50% { transform: scaleY(1); } }
+@keyframes a-radar { 0% { transform: scale(.2); opacity: .8; } 100% { transform: scale(1); opacity: 0; } }
+@keyframes a-shimmer-text { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+@keyframes a-caret { 50% { opacity: 0; } }
+@keyframes a-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes a-wiggle { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-6deg); } 75% { transform: rotate(6deg); } }
+@keyframes a-elastic { 0% { transform: scale(.4); opacity: 0; } 55% { transform: scale(1.12); opacity: 1; } 78% { transform: scale(.96); } 100% { transform: scale(1); } }
+@keyframes a-marquee { to { transform: translateX(-50%); } }
+@keyframes a-heartbeat { 0%, 100% { transform: scale(1); } 20% { transform: scale(1.18); } 40% { transform: scale(1); } 60% { transform: scale(1.1); } }
+@keyframes a-glow { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-action-primary) 45%, transparent); } 50% { box-shadow: 0 0 0 8px transparent; } }
+@keyframes a-ripple { from { transform: scale(0); opacity: .35; } to { transform: scale(1); opacity: 0; } }
+@keyframes a-conic { to { transform: rotate(360deg); } }
+@keyframes a-notif-in { from { opacity: 0; transform: translateY(-8px) scale(.98); } }
+@keyframes a-ring-fill { from { stroke-dashoffset: var(--len); } }
+@keyframes a-count-pop { 50% { transform: translateY(-2px) scale(1.08); } }
+.m-wave > * { animation: a-wave 1.2s ease-in-out infinite; animation-delay: calc(var(--i, 0) * 140ms); }
+.m-eq > * { transform-origin: bottom; animation: a-eq 1s ease-in-out infinite; animation-delay: calc(var(--i, 0) * 120ms); }
+.m-radar { animation: a-radar 1.8s var(--ease-enter) infinite; animation-delay: calc(var(--i, 0) * 600ms); }
+.m-shimmer-text { background: linear-gradient(90deg, var(--color-tertiary) 35%, var(--color-primary) 50%, var(--color-tertiary) 65%) 0 0 / 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: a-shimmer-text 2.2s linear infinite; }
+.m-caret { animation: a-caret 1s steps(1) infinite; }
+.m-float { animation: a-float 3.2s ease-in-out infinite; }
+.m-wiggle:hover { animation: a-wiggle 360ms ease-in-out; }
+.m-elastic { animation: a-elastic 520ms var(--ease-enter) both; }
+.m-marquee { animation: a-marquee 28s linear infinite; }
+.m-marquee-wrap:hover .m-marquee { animation-play-state: paused; }
+.m-heartbeat { animation: a-heartbeat 900ms ease-in-out 1; }
+.m-glow { animation: a-glow 2s ease-out infinite; }
+.m-ripple { position: absolute; border-radius: 9999px; pointer-events: none; background: currentColor; animation: a-ripple 520ms ease-out forwards; }
+.m-notif-in { animation: a-notif-in 220ms var(--ease-enter) both; }
+.m-count-pop { animation: a-count-pop 260ms var(--ease-enter); }
+.m-ring-fill { animation: a-ring-fill 900ms var(--ease-enter) both; }
+.flip { perspective: 900px; } .flip-inner { transition: transform 500ms var(--ease-enter); transform-style: preserve-3d; } .flip[data-on="true"] .flip-inner { transform: rotateY(180deg); } .flip-face { backface-visibility: hidden; } .flip-back { transform: rotateY(180deg); }
+@media (prefers-reduced-motion: reduce) { .m-wave > *, .m-eq > *, .m-radar { animation-name: a-pulse !important; animation-iteration-count: infinite !important; animation-duration: 1.6s !important; } .m-marquee { animation: none !important; } .m-shimmer-text { animation: none !important; color: var(--color-secondary); background: none; } .flip-inner { transition: none; } }

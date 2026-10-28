@@ -20,7 +20,7 @@ The goal: you (or your AI) build screens by **reusing components and following t
 In the root of your project:
 
 ```bash
-npm i https://github.com/bytesphere-Technologies/ui-standards/releases/download/v1.0.0/bytesphere-ui-1.0.0.tgz
+npm i github:bytesphere-Technologies/ui-standards#v1.0.0
 npx bytesphere-ui init
 ```
 
@@ -105,7 +105,7 @@ Flat, bordered, dense and quiet is the house style: surfaces are separated by 1p
 
 ## 5. Enforce it automatically (optional but recommended)
 
-The package ships ESLint rules that fail on the most common mistakes: raw colors, default Tailwind palette, arbitrary sizes, and raw `<button>` / `<input>` instead of the components. The setup is at the end of `ui-standards/AGENTS.md`. Use `"warn"` while migrating old code and `"error"` for new code. Add `npm run lint` to your CI.
+The package ships ESLint rules that fail on the most common mistakes: raw colors, default Tailwind palette, arbitrary sizes, and raw `<button>` / `<input>` instead of the components. The setup is at the end of `ui-standards/AGENTS.md`. Use `"warn"` while migrating old code and `"error"` for new code. Add `npm run lint` to your project's checks.
 
 ---
 
@@ -114,7 +114,7 @@ The package ships ESLint rules that fail on the most common mistakes: raw colors
 When a new version is released:
 
 ```bash
-npm i https://github.com/bytesphere-Technologies/ui-standards/releases/download/v1.1.0/bytesphere-ui-1.1.0.tgz
+npm i github:bytesphere-Technologies/ui-standards#v1.1.0
 npx bytesphere-ui init        # refreshes ui-standards/
 ```
 
@@ -143,7 +143,7 @@ Components are not copied into your project, so a fix reaches everyone by updati
 ```bash
 npm install
 npm run dev          # showcase at http://localhost:5173 (141 pages, all components, themes)
-npm run check        # typecheck + lint + lint-rule tests + catalog + build
+npm run check        # typecheck + lint + lint-rule tests + catalog + build (run before every release)
 npm test             # Playwright: every page renders, accessibility (axe), 360px mobile fit, key flows
 npm run test:ssr     # every component loads on the server, as Next.js does
 npm run catalog      # regenerate the component index, per-component READMEs and the package exports
@@ -165,11 +165,10 @@ ui-standards/
 
 **Add a component:** create `packages/ui/src/components/<kebab-name>/index.tsx` (start with `"use client";`, use tokens, include loading/empty/error states where it fetches), add an entry in `packages/ui/catalog/catalog.data.ts` (summary, what people ask for, props, snippet), add a preview in `apps/showcase/src/catalog/previews.tsx`, then run `npm run catalog` and `npm run check`. The export, the README and the AI index update by themselves.
 
-**Release:**
+**Release a version** (no CI, no registry, no tokens):
 ```bash
-npm version <x.y.z> -w packages/ui
-npm pack -w packages/ui        # also bundles docs into the package
+npm run release -- 1.1.0
 ```
-Create a GitHub release tagged `v<x.y.z>` and attach the `bytesphere-ui-<x.y.z>.tgz` file. CI (`.github/workflows/check.yml`) runs the checks on every pull request.
+This bundles the docs into the package, commits just the package as its own root, and pushes it as the git tag `v1.1.0` on this repo. Teams install it with `npm i github:bytesphere-Technologies/ui-standards#v1.1.0`. Commit the version bump it makes in `packages/ui/package.json` afterwards. Run `npm run check` and `npm test` yourself before releasing.
 
 **Rebrand:** change the brand seeds in `docs/02-tokens`, regenerate the ramps (`docs/01-foundations/color.md` §2), re-run the contrast table, rebuild tokens. Nothing else changes.

@@ -3,17 +3,16 @@
 ByteSphere Technologies components, design tokens and styles. React 18, Tailwind CSS v4, TypeScript.
 
 ## Install (Next.js)
-The package ships TypeScript source (Next compiles it through `transpilePackages`).
+The package ships TypeScript source (Next compiles it through `transpilePackages`). It installs from our private GitHub repo with your normal GitHub access (SSH key or `gh auth login`); no token or registry needed.
 
 ```bash
-# from a GitHub release asset (recommended, pinned version)
-npm i https://github.com/bytesphere-Technologies/ui-standards/releases/download/v1.0.0/bytesphere-ui-1.0.0.tgz
+npm i github:bytesphere-Technologies/ui-standards#v1.0.0
 ```
 Peer dependencies: `react` 18 or 19, `react-dom`, `tailwindcss` v4 (`@tailwindcss/postcss` for Next, `@tailwindcss/vite` for Vite).
 
 ## Use in Next.js (App Router)
 ```bash
-npm i <release .tgz url>
+npm i github:bytesphere-Technologies/ui-standards#v1.0.0
 npx bytesphere-ui init            # add --dry-run to preview
 ```
 `init` is safe to run again. It does these things, each only if not already done:
@@ -48,8 +47,4 @@ export default [{ files: ["src/**/*.{ts,tsx}"], plugins: { ui }, rules: {
 - `@bytesphere/ui/catalog`: the same data as a typed module (`catalog`, `categories`)
 
 ## Release (maintainers)
-```bash
-npm version <x.y.z> -w packages/ui
-npm pack -w packages/ui         # creates bytesphere-ui-<x.y.z>.tgz
-# attach the .tgz to a GitHub release tagged v<x.y.z>
-```
+From the repo root: `npm run release -- <x.y.z>`. See the root README.

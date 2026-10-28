@@ -1,0 +1,102 @@
+/* Named appearance options. Generated values are contrast-checked (see 01-foundations/themes-and-dark-modes.md).
+   Selectors work on any element, so a preview can be scoped: <div data-theme="dark" data-dark="navy">. */
+[data-theme="dark"][data-dark="midnight"] {
+  --t-color-surface-default: #0A121C; --t-color-surface-raised: #111B27; --t-color-surface-sunken: #000913; --t-color-surface-overlay: #192534;
+  --t-color-border-subtle: #223142; --t-color-selected-bg: #223142; --t-color-focus-ring-offset: #0A121C;
+  --t-color-action-ghost-hover: #192534; --t-color-action-ghost-active: #223142;
+  --t-color-action-secondary-rest: #111B27; --t-color-action-secondary-hover: #192534; --t-color-action-secondary-active: #223142; --t-color-action-secondary-selected: #223142;
+  --t-color-action-subtle-rest: #192534; --t-color-action-subtle-hover: #223142; --t-color-action-primary-disabled: #192534;
+  --t-color-input-bg: #0A121C; --t-color-input-bg-readonly: #111B27;
+}
+[data-theme="dark"][data-dark="navy"] {
+  --t-color-surface-default: #0E1530; --t-color-surface-raised: #151E3F; --t-color-surface-sunken: #080D22; --t-color-surface-overlay: #1D2951;
+  --t-color-border-subtle: #2B3A68; --t-color-selected-bg: #212F63; --t-color-focus-ring-offset: #0E1530;
+  --t-color-action-ghost-hover: #1D2951; --t-color-action-ghost-active: #2B3A68;
+  --t-color-action-secondary-rest: #151E3F; --t-color-action-secondary-hover: #1D2951; --t-color-action-secondary-active: #2B3A68; --t-color-action-secondary-selected: #2B3A68;
+  --t-color-action-subtle-rest: #1D2951; --t-color-action-subtle-hover: #2B3A68; --t-color-action-primary-disabled: #1D2951;
+  --t-color-input-bg: #0E1530; --t-color-input-bg-readonly: #151E3F;
+}
+[data-theme="dark"][data-dark="ink"] {
+  --t-color-surface-default: #03101D; --t-color-surface-raised: #071727; --t-color-surface-sunken: #000913; --t-color-surface-overlay: #0F2033;
+  --t-color-border-subtle: #1A2A3C; --t-color-selected-bg: #14293F; --t-color-focus-ring-offset: #03101D;
+  --t-color-action-ghost-hover: #0F2033; --t-color-action-ghost-active: #1A2A3C;
+  --t-color-action-secondary-rest: #071727; --t-color-action-secondary-hover: #0F2033; --t-color-action-secondary-active: #1A2A3C; --t-color-action-secondary-selected: #1A2A3C;
+  --t-color-action-subtle-rest: #0F2033; --t-color-action-subtle-hover: #1A2A3C; --t-color-action-primary-disabled: #0F2033;
+  --t-color-input-bg: #03101D; --t-color-input-bg-readonly: #071727;
+}
+[data-theme="dark"][data-dark="slate"] {
+  --t-color-surface-default: #15191F; --t-color-surface-raised: #1C2128; --t-color-surface-sunken: #0F1216; --t-color-surface-overlay: #242B34;
+  --t-color-border-subtle: #2F3741; --t-color-selected-bg: #2B3847; --t-color-focus-ring-offset: #15191F;
+  --t-color-action-ghost-hover: #242B34; --t-color-action-ghost-active: #2F3741;
+  --t-color-action-secondary-rest: #1C2128; --t-color-action-secondary-hover: #242B34; --t-color-action-secondary-active: #2F3741; --t-color-action-secondary-selected: #2F3741;
+  --t-color-action-subtle-rest: #242B34; --t-color-action-subtle-hover: #2F3741; --t-color-action-primary-disabled: #242B34;
+  --t-color-input-bg: #15191F; --t-color-input-bg-readonly: #1C2128;
+}
+[data-theme="dark"][data-dark="ocean"] {
+  --t-color-surface-default: #07151E; --t-color-surface-raised: #0D2130; --t-color-surface-sunken: #030D14; --t-color-surface-overlay: #142D40;
+  --t-color-border-subtle: #1F3B50; --t-color-selected-bg: #123A50; --t-color-focus-ring-offset: #07151E;
+  --t-color-action-ghost-hover: #142D40; --t-color-action-ghost-active: #1F3B50;
+  --t-color-action-secondary-rest: #0D2130; --t-color-action-secondary-hover: #142D40; --t-color-action-secondary-active: #1F3B50; --t-color-action-secondary-selected: #1F3B50;
+  --t-color-action-subtle-rest: #142D40; --t-color-action-subtle-hover: #1F3B50; --t-color-action-primary-disabled: #142D40;
+  --t-color-input-bg: #07151E; --t-color-input-bg-readonly: #0D2130;
+}
+[data-theme="dark"][data-dark="dim"] {
+  --t-color-surface-default: #1D2530; --t-color-surface-raised: #252F3B; --t-color-surface-sunken: #171D25; --t-color-surface-overlay: #2E3A48;
+  --t-color-border-subtle: #3B4859; --t-color-selected-bg: #2B4560; --t-color-focus-ring-offset: #1D2530;
+  --t-color-action-ghost-hover: #2E3A48; --t-color-action-ghost-active: #3B4859;
+  --t-color-action-secondary-rest: #252F3B; --t-color-action-secondary-hover: #2E3A48; --t-color-action-secondary-active: #3B4859; --t-color-action-secondary-selected: #3B4859;
+  --t-color-action-subtle-rest: #2E3A48; --t-color-action-subtle-hover: #3B4859; --t-color-action-primary-disabled: #2E3A48;
+  --t-color-input-bg: #1D2530; --t-color-input-bg-readonly: #252F3B;
+  --t-color-text-tertiary: #AEB9C2;
+  --t-color-border-control: #8696A3;
+  --t-color-input-placeholder: #AEB9C2;
+}
+[data-theme="light"][data-light="mist"] { --t-color-surface-sunken: #EEF3FB; --t-color-action-ghost-hover: #E3EBF7; --t-color-border-subtle: #D3DEEE; }
+[data-theme="light"][data-light="paper"] { /* default tokens */ }
+
+/* Corner presets: change every radius class at once */
+[data-radius="sharp"]    { --t-radius-tag: 2px; --t-radius-control: 3px; --t-radius-card: 4px;  --t-radius-modal: 6px;  --corner-inner: 2px; }
+[data-radius="standard"] { --t-radius-tag: 4px; --t-radius-control: 6px; --t-radius-card: 8px;  --t-radius-modal: 12px; --corner-inner: 5px; }
+[data-radius="soft"]     { --t-radius-tag: 6px; --t-radius-control: 10px; --t-radius-card: 14px; --t-radius-modal: 20px; --corner-inner: 8px; }
+[data-radius="round"]    { --t-radius-tag: 8px; --t-radius-control: 14px; --t-radius-card: 20px; --t-radius-modal: 28px; --corner-inner: 12px; }
+:root { --corner-inner: 5px; }
+
+/* Navigation styles: the sidebar, bars and rails read these variables */
+:root, [data-nav="surface"] {
+  --nav-bg: var(--t-color-surface-default); --nav-fg: var(--t-color-text-secondary); --nav-fg-strong: var(--t-color-text-primary); --nav-muted: var(--t-color-text-tertiary);
+  --nav-hover: var(--t-color-action-ghost-hover); --nav-active-bg: var(--t-color-selected-bg); --nav-active-fg: var(--t-color-text-primary); --nav-active-icon: var(--t-color-text-link-rest); --nav-border: var(--t-color-border-subtle);
+}
+[data-nav="tint"] { --nav-bg: color-mix(in srgb, var(--t-color-selected-bg) 45%, var(--t-color-surface-default)); --nav-hover: color-mix(in srgb, var(--t-color-selected-bg) 70%, transparent); --nav-active-bg: var(--t-color-surface-raised); }
+[data-nav="navy"] { --nav-bg: #21346E; --nav-fg: #D6DDF2; --nav-fg-strong: #FFFFFF; --nav-muted: #A6B4DD; --nav-hover: rgb(255 255 255 / .08); --nav-active-bg: rgb(255 255 255 / .14); --nav-active-fg: #FFFFFF; --nav-active-icon: #FFFFFF; --nav-border: rgb(255 255 255 / .12); }
+[data-nav="ink"]  { --nav-bg: #000913; --nav-fg: #D6DDF2; --nav-fg-strong: #FFFFFF; --nav-muted: #A6B4DD; --nav-hover: rgb(255 255 255 / .08); --nav-active-bg: rgb(255 255 255 / .12); --nav-active-fg: #FFFFFF; --nav-active-icon: #65ABE2; --nav-border: rgb(255 255 255 / .1); }
+
+/* ───────── Added: Cobalt and Dusk dark modes, Sky and Frost light pages ───────── */
+[data-theme="dark"][data-dark="cobalt"] {
+  --t-color-surface-default: #091630; --t-color-surface-raised: #102042; --t-color-surface-sunken: #040B1E; --t-color-surface-overlay: #182C57;
+  --t-color-border-subtle: #243E78; --t-color-selected-bg: #17376E; --t-color-focus-ring-offset: #091630;
+  --t-color-action-ghost-hover: #182C57; --t-color-action-ghost-active: #243E78;
+  --t-color-action-secondary-rest: #102042; --t-color-action-secondary-hover: #182C57; --t-color-action-secondary-active: #243E78; --t-color-action-secondary-selected: #243E78;
+  --t-color-action-subtle-rest: #182C57; --t-color-action-subtle-hover: #243E78; --t-color-action-primary-disabled: #182C57;
+  --t-color-input-bg: #091630; --t-color-input-bg-readonly: #102042;
+}
+[data-theme="dark"][data-dark="dusk"] {
+  --t-color-surface-default: #151B38; --t-color-surface-raised: #1D2546; --t-color-surface-sunken: #0F1428; --t-color-surface-overlay: #27315A;
+  --t-color-border-subtle: #36427A; --t-color-selected-bg: #243170; --t-color-focus-ring-offset: #151B38;
+  --t-color-action-ghost-hover: #27315A; --t-color-action-ghost-active: #36427A;
+  --t-color-action-secondary-rest: #1D2546; --t-color-action-secondary-hover: #27315A; --t-color-action-secondary-active: #36427A; --t-color-action-secondary-selected: #36427A;
+  --t-color-action-subtle-rest: #27315A; --t-color-action-subtle-hover: #36427A; --t-color-action-primary-disabled: #27315A;
+  --t-color-input-bg: #151B38; --t-color-input-bg-readonly: #1D2546;
+}
+[data-theme="light"][data-light="sky"] { --t-color-surface-sunken: #E8F1FA; --t-color-action-ghost-hover: #DCE9F6; --t-color-border-subtle: #C9DAEC; --t-color-selected-bg: #D3E4F6; }
+[data-theme="light"][data-light="frost"] { --t-color-surface-sunken: #F0F3F7; --t-color-action-ghost-hover: #E4E9EF; --t-color-border-subtle: #CBD3DC; }
+
+/* ───────── Accent: which brand color leads. Azure is the default; Navy makes actions Corporate Navy ───────── */
+[data-theme="light"][data-accent="navy"] {
+  --t-color-action-primary-rest: #21346E; --t-color-action-primary-hover: #2E417A; --t-color-action-primary-active: #1C253F; --t-color-action-primary-selected: #2E417A; --t-color-action-primary-fg: #FFFFFF;
+  --t-color-focus-ring: #21346E; --t-color-text-link-rest: #21346E; --t-color-text-link-hover: #1C253F; --t-color-selected-bar: #21346E; --t-color-action-subtle-fg: #21346E; --t-color-action-subtle-rest: #E9EBF2; --t-color-action-subtle-hover: #CBD3EB;
+}
+[data-theme="dark"][data-accent="navy"] {
+  --t-color-action-primary-rest: #A6B4DD; --t-color-action-primary-hover: #CBD3EB; --t-color-action-primary-active: #E9EBF2; --t-color-action-primary-selected: #CBD3EB; --t-color-action-primary-fg: #000913;
+  --t-color-focus-ring: #A6B4DD; --t-color-text-link-rest: #A6B4DD; --t-color-text-link-hover: #CBD3EB; --t-color-selected-bar: #A6B4DD; --t-color-action-subtle-fg: #CBD3EB;
+}
+[data-nav="azure"] { --nav-bg: #116CB3; --nav-fg: #FFFFFF; --nav-fg-strong: #FFFFFF; --nav-muted: #EAF2FA; --nav-hover: rgb(0 9 19 / .14); --nav-active-bg: rgb(0 9 19 / .26); --nav-active-fg: #FFFFFF; --nav-active-icon: #FFFFFF; --nav-border: rgb(255 255 255 / .18); }

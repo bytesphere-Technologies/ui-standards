@@ -1,0 +1,58 @@
+{
+  "$comment": "Style Dictionary v4 (styledictionary.com). Hooks 'ui/css-modes', 'ui/name-strip', 'ui/ts-types' are registered in build.mjs (see README.md). Run: node build.mjs",
+  "source": [
+    "tokens.primitive.json",
+    "tokens.semantic.json",
+    "tokens.component.json"
+  ],
+  "usesDtcg": true,
+  "log": { "warnings": "warn", "verbosity": "default" },
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "transforms": ["ui/name-strip"],
+      "prefix": "",
+      "buildPath": "dist/css/",
+      "files": [
+        {
+          "destination": "tokens.css",
+          "format": "ui/css-modes",
+          "filter": "ui/not-primitive",
+          "options": {
+            "outputReferences": true,
+            "lightSelector": ":root",
+            "darkSelector": ":root[data-theme=\"dark\"]",
+            "darkMedia": "(prefers-color-scheme: dark)",
+            "darkMediaScope": ":root:not([data-theme=\"light\"])"
+          }
+        },
+        {
+          "destination": "primitives.css",
+          "format": "css/variables",
+          "filter": "ui/only-primitive",
+          "options": { "selector": ":root", "outputReferences": false }
+        }
+      ]
+    },
+    "ts": {
+      "transformGroup": "js",
+      "buildPath": "dist/ts/",
+      "files": [
+        { "destination": "tokens.ts", "format": "javascript/es6", "filter": "ui/not-primitive" },
+        { "destination": "tokens.d.ts", "format": "ui/ts-types", "filter": "ui/not-primitive" }
+      ]
+    },
+    "tailwind": {
+      "transformGroup": "css",
+      "transforms": ["ui/name-strip"],
+      "buildPath": "dist/tailwind/",
+      "files": [
+        {
+          "destination": "theme.css",
+          "format": "ui/tailwind-theme",
+          "filter": "ui/not-primitive"
+        }
+      ]
+    }
+  }
+}

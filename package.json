@@ -1,0 +1,33 @@
+{
+  "name": "ui-standards",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w apps/showcase",
+    "build": "npm run build -w apps/showcase",
+    "catalog": "npm run catalog -w packages/ui",
+    "test": "npm test -w apps/showcase",
+    "typecheck": "npm run typecheck -w apps/showcase",
+    "lint": "eslint .",
+    "test:lint": "node packages/ui/eslint-plugin/test.mjs",
+    "check": "npm run typecheck && npm run lint && npm run test:lint && npm run catalog && npm run build",
+    "test:ssr": "npm run test:ssr -w packages/ui"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.49.1",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.39.5",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^6.0.0"
+  }
+}

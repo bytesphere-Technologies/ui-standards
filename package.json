@@ -15,7 +15,8 @@
     "lint": "eslint .",
     "test:lint": "node packages/ui/eslint-plugin/test.mjs",
     "check": "npm run typecheck && npm run lint && npm run test:lint && npm run catalog && npm run build",
-    "test:ssr": "npm run test:ssr -w packages/ui"
+    "test:ssr": "npm run test:ssr -w packages/ui",
+    "release": "node scripts/release.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",

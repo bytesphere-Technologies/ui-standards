@@ -1,0 +1,23 @@
+{
+  "name": "showcase",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "playwright test",
+    "test:a11y": "playwright test tests/a11y.spec.ts",
+    "test:mobile": "playwright test tests/mobile.spec.ts",
+    "test:smoke": "playwright test tests/smoke.spec.ts",
+    "test:flows": "playwright test tests/flows.spec.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@bytesphere/ui": "*"
+  }
+}
